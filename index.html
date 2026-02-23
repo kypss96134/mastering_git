@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name — Profile</title>
+    <meta name="description" content="Your personal profile page." />
+
+    <style>
+      :root{
+        --bg:#0b1220;
+        --card:#111a2e;
+        --text:#e8eefc;
+        --muted:#a9b6d6;
+        --line:rgba(255,255,255,.12);
+        --accent:#6ea8ff;
+        --shadow: 0 18px 60px rgba(0,0,0,.35);
+        --radius:18px;
+      }
+      [data-theme="light"]{
+        --bg:#f6f7fb;
+        --card:#ffffff;
+        --text:#0f172a;
+        --muted:#475569;
+        --line:rgba(2,6,23,.12);
+        --accent:#2563eb;
+        --shadow: 0 18px 60px rgba(2,6,23,.12);
+      }
+
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        background: radial-gradient(1200px 600px at 20% -10%, rgba(110,168,255,.25), transparent 50%),
+                    radial-gradient(900px 500px at 100% 20%, rgba(124,58,237,.18), transparent 55%),
+                    var(--bg);
+        color:var(--text);
+      }
+      a{color:inherit; text-decoration:none}
+      a:hover{opacity:.9}
+      .wrap{max-width:980px; margin:0 auto; padding:28px 18px 70px}
+      header{
+        display:flex; align-items:center; justify-content:space-between;
+        gap:16px; margin-bottom:22px;
+      }
+      .brand{
+        display:flex; align-items:center; gap:12px;
+      }
+      .avatar{
+        width:44px; height:44px; border-radius:999px;
+        border:1px solid var(--line);
+        object-fit:cover;
+        box-shadow: 0 10px 26px rgba(0,0,0,.25);
+      }
+      .name{font-weight:800; letter-spacing:.2px}
+      .tag{color:var(--muted); font-size:.95rem}
+      .btn{
+        border:1px solid var(--line);
+        background:color-mix(in srgb, var(--card) 85%, transparent);
+        color:var(--text);
+        padding:10px 12px;
+        border-radius:999px;
+        cursor:pointer;
+        display:inline-flex; align-items:center; gap:8px;
+      }
+      .grid{
+        display:grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap:18px;
+      }
+      @media (max-width: 860px){
+        .grid{grid-template-columns:1fr}
+      }
+      .card{
+        background:linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, transparent), var(--card));
+        border:1px solid var(--line);
+        border-radius:var(--radius);
+        padding:18px;
+        box-shadow:var(--shadow);
+      }
+      h1{font-size:2rem; line-height:1.2; margin:0 0 10px}
+      h2{font-size:1.05rem; margin:0 0 10px}
+      p{margin:0 0 12px; color:var(--muted)}
+      .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+      .pill{
+        border:1px solid var(--line);
+        padding:7px 10px;
+        border-radius:999px;
+        font-size:.92rem;
+        color:var(--text);
+        background:color-mix(in srgb, var(--card) 80%, transparent);
+      }
+      .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+      .actions .btn.primary{
+        border-color: color-mix(in srgb, var(--accent) 65%, var(--line));
+        background: color-mix(in srgb, var(--accent) 22%, var(--card));
+      }
+      .list{display:grid; gap:10px}
+      .item{
+        border:1px solid var(--line);
+        border-radius:14px;
+        padding:12px;
+        background:color-mix(in srgb, var(--card) 86%, transparent);
+      }
+      .item strong{display:block}
+      .item small{color:var(--muted)}
+      footer{
+        margin-top:18px;
+        color:var(--muted);
+        font-size:.92rem;
+        display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      }
+      .links{display:flex; gap:12px; flex-wrap:wrap}
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <!-- Replace avatar.jpg with your own image file -->
+          <img class="avatar" src="avatar.jpg" alt="Your profile photo" />
+          <div>
+            <div class="name">Your Name</div>
+            <div class="tag">Role / Title • City, Country</div>
+          </div>
+        </div>
+
+        <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">
+          <span>🌓</span><span>Theme</span>
+        </button>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <h1>Hi, I’m Your Name.</h1>
+          <p>
+            Write a short intro: what you do, what you’re into, and what you’re looking for.
+            Keep it 2–4 sentences.
+          </p>
+
+          <div class="pill-row" aria-label="Key skills">
+            <span class="pill">Skill 1</span>
+            <span class="pill">Skill 2</span>
+            <span class="pill">Skill 3</span>
+            <span class="pill">Skill 4</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="mailto:you@email.com">✉️ Email me</a>
+            <a class="btn" href="https://github.com/yourname" target="_blank" rel="noreferrer">💻 GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+            <a class="btn" href="./resume.pdf" target="_blank" rel="noreferrer">📄 Resume</a>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2>Quick info</h2>
+          <div class="list">
+            <div class="item">
+              <strong>Currently</strong>
+              <small>What you’re working on right now</small>
+            </div>
+            <div class="item">
+              <strong>Open to</strong>
+              <small>Jobs / freelance / collaborations</small>
+            </div>
+            <div class="item">
+              <strong>Stack</strong>
+              <small>Your main tools/tech</small>
+            </div>
+          </div>
+        </aside>
+
+        <section class="card" style="grid-column: 1 / -1;">
+          <h2>Projects</h2>
+          <div class="list">
+            <div class="item">
+              <strong>Project Name</strong>
+              <small>1–2 lines describing what it is and what impact it had.</small>
+              <div class="links" style="margin-top:8px;">
+                <a class="btn" href="https://example.com" target="_blank" rel="noreferrer">Live</a>
+                <a class="btn" href="https://github.com/yourname/project" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+
+            <div class="item">
+              <strong>Project Name 2</strong>
+              <small>Another short description.</small>
+              <div class="links" style="margin-top:8px;">
+                <a class="btn" href="https://example.com" target="_blank" rel="noreferrer">Live</a>
+                <a class="btn" href="https://github.com/yourname/project2" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <span>© <span id="year"></span> Your Name</span>
+        <span>Built with plain HTML/CSS</span>
+      </footer>
+    </div>
+
+    <script>
+      // Theme toggle (remembers your choice)
+      const key = "profile_theme";
+      const root = document.documentElement;
+      const saved = localStorage.getItem(key);
+      if (saved) root.setAttribute("data-theme", saved);
+
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") || "dark";
+        const next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem(key, next);
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
